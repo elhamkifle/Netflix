@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Watch TV Shows Online, Watch Movies Online </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" 
+    crossorigin="anonymous">
+
+    <style>
+        body{
+            background-color: black;
+        }
+        header{
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 2%;
+            padding-left: 2%;
+        } 
+        .sign-in-button{
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        p{
+            text-align: center;
+            color: white;
+            opacity: 1;
+            font-size: larger;
+            font-weight: 400;
+        }
+        p.first{
+            margin-top: 17%;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        p.last{
+            margin-top: 2%;
+            opacity: 1;
+        }
+        form{
+            display: flex;
+            justify-content: center;
+        }
+
+        .email{
+            margin-right: 8px;
+            padding: 15px 20%;
+            padding-left: 15px;
+            background-color: black;
+            opacity: 0.7;
+            border-radius: 5px;
+            border-color: white;
+        }
+        .submit, div.faq button.submit{
+            background-color: red;
+            padding: 15px 4%;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: larger;
+       }
+
+        div.page-1{
+            height: 500px;
+            max-height: 700px;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8) ), url('https://assets.nflxext.com/ffe/siteui/vlv3/d7af077c-af5a-4055-8f9a-740a43588583/f66cfd03-3a52-4265-ba13-cec508440aed/ET-en-20230717-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (min-width: 900px){
+            div.page-1{
+                height: 600px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            form{
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .submit, div.faq button.submit{
+                margin-top: 20px;
+            }
+
+        }
+
+
+        hr{
+            background-color: grey;
+            height: 10px;
+        }
+
+        div.page-2 img{
+            width: 65%;
+            margin-left: 15%;
+            margin-bottom: 100px;
+        }
+
+        div.page-3 img{
+            width: 65%;
+            max-width: 500px;
+            max-height: 370px;
+            margin-left: 21%;
+            margin-bottom: 100px;
+        }
+
+        div.page-5 img{
+            width: 90%;
+            margin-left: 5%;
+            margin-bottom: 100px;
+        }
+
+        p.header{
+            font-size: 30px;
+            margin-top: 60px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+
+        p.text{
+            margin-bottom: 100px;
+        }
+        div.page-5 p.text{
+            margin-bottom: 5px;
+        }
+
+        div.faq button.question{
+            display: block;
+            display: flex;
+            justify-content: space-between;
+            width: 92%;
+            background-color: rgb(42, 41, 41);
+            border: none;
+            padding-left: 5%;
+            padding-right: 5%;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            padding-top: 20px;
+            margin-left: 4%;
+            margin-right: 2%;
+
+        }
+
+        div.faq form{
+            margin-bottom: 80px;
+        }
+
+        div.faq p.last{
+            margin-top: 40px;
+        }
+        
+
+        div.faq p.header{
+            margin-bottom: 20px;
+        }
+        button span.text{
+            color: white;
+            font-size: 18px;
+        }
+
+        button span.add{
+            color: white;
+            font-size: 30px;
+            font-weight: 100;
+        }
+
+        p.answer {
+            display: none;
+            background-color: rgb(42, 41, 41);
+            margin-left: 4%;
+            margin-right: 2%;
+            width: 92%;
+            border: rgb(42, 41, 41) ;
+            margin-top: 2px;
+            text-align: center;
+        }
+
+        div.footer-links{
+            display: inline-flex;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 22%;
+            margin-left: 5%;
+            margin-bottom: 20px;
+        }
+
+        a{
+            color: rgb(155, 155, 155);
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        footer p{
+            color: rgb(155, 155, 155);
+            margin-right: 85%;
+            margin-bottom: 40px;
+            margin-top: 30px;
+            font-size: medium;
+            
+        }
+
+
+
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="page-1">
+    <header class="header"> 
+        <div > <img src="./logo.png" alt="Logo" style="height: 40px;"> </div>
+        <button class="sign-in-button"> Sign In </button>
+    </header>
+
+    <p class="first"> <b> Unlimited movies, TV shows, and more</b> </p>
+    <p> Watch anywhere. Cancel anytime.  </p>
+    <p class="last"> Ready to watch? Enter your email to create or restart your membership. </p>
+
+    <form>
+        <input type="email" placeholder="Email address" class="email">
+        <button class="submit"> <b> Get Started <span class="arrow"> > </span> </b>  </button>        
+    </form>
+    
+    </div>
+    <hr>
+    
+
+    <div class="page-2">
+        <p class="header"> <b> Enjoy on your TV </b>  </p>
+        <p class="text"> Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more. </p>
+        <img src="./movies.png" alt="">
+    </div>
+
+    <hr>
+
+    <div class="page-3">
+        <p class="header"> <b> Download your shows to watch offline </b></p>
+        <p class="text"> Save your favorites easily and always have something to watch. </p>
+        <img src="./stranger-things.png" alt="">
+    </div>
+
+    <hr>
+
+    <div class="page-4">
+        <p class="header"> <b> Watch everywhere</b></p>
+        <p class="text"> Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.</p>
+    </div>
+
+    <hr> 
+    <div class="page-5">
+        <p class="header"> <b> Create profiles for kids</b></p>
+        <p class="text"> Send kids on adventures with their favorite characters in a space made just for them—free with your membership.</p>
+        <img src="./kids.png" alt="">
+    </div>
+    <hr>
+
+    <div class="faq">
+        <p class="header"> Frequently Asked Questions </p>
+        <button class="question" onclick="toggleAnswer('answer1')"> <span class="text"> What is Netflix? </span>  <span class="add"> +  </span>  </button>
+            <p id="answer1" class="answer" style="display: none;"> Netflix is a streaming service that offers a wide variety of 
+                award-winning TV shows, movies, anime, documentaries, 
+                and more on thousands of internet-connected devices. <br>
+                <br>
+                You can watch as much as you want,
+                whenever you want without a single commercial – 
+                all for one low monthly price. 
+                There's always something new to discover and new TV
+                shows and movies are added every week!</p>
+        <button class="question" onclick="toggleAnswer('answer2')"> <span class="text">How much does Netflix cost? </span> <span class="add"> +  </span>  </button>
+        <p id="answer2" class="answer" style="display: none;">
+            Watch Netflix on your smartphone, tablet, Smart TV, laptop, 
+            or streaming device, all for one fixed monthly fee. 
+            Plans range from USD2.99 to USD9.99 a month. No extra costs, no contracts.
+        </p>
+        <button class="question" onclick="toggleAnswer('answer3')"> <span class="text">Where can I watch? </span> <span class="add"> +  </span>  </button>
+        <p id="answer3" class="answer" style="display: none;">
+            Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer 
+            or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.
+            <br>
+            <br>
+
+            You can also download your favorite shows with the iOS, Android, or Windows 10 app. Use downloads to watch while you're on the go and without an internet connection. 
+            Take Netflix with you anywhere.
+
+        </p>
+        <button class="question" onclick="toggleAnswer('answer4')"> <span class="text">How do I cancel? </span> <span class="add"> +  </span>  </button>
+        <p class="answer" id="answer4" style="display: none;">
+            Netflix is flexible. 
+            There are no pesky contracts and no commitments. 
+            You can easily cancel your account online in two clicks.
+            There are no cancellation fees – start or stop your account anytime.
+        </p>
+        <button class="question" onclick="toggleAnswer('answer5')"> <span class="text">What can I watch on Netflix? </span> <span class="add"> +  </span>  </button>
+        <p class="answer" id="answer5" style="display: none;">
+            Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. 
+            Watch as much as you want, anytime you want.
+        </p>
+        <button class="question" onclick="toggleAnswer('answer')"> <span class="text">Is Netflix good for kids?</span><span class="add">+</span></button>
+            <p class="answer" id="answer" style="display: none;"> The Netflix Kids experience is included in your membership to give parents
+                control while kids enjoy family-friendly TV shows and movies in their own space.
+                <br>
+                <br>
+                Kids profiles come with PIN-protected parental controls that 
+                let you restrict the maturity rating of content kids can watch and block specific
+                titles you don’t want kids to see.</p>
+
+        <p class="last"> Ready to watch? Enter your email to create or restart your membership. </p>        
+
+        <form>
+            <input type="email" placeholder="Email address" class="email">
+            <button class="submit"> <b> Get Started <span class="arrow"> > </span> </b>  </button>        
+        </form>
+
+        <hr>
+
+        <footer>
+            <div class="footer-links">
+                <a href=""> Questions? Contact us.</a><br>
+            </div>
+            
+            <div class="footer-links">
+                <a href=""> FAQ </a>
+                <a href=""> Help Center </a>
+                <a href=""> Account </a>
+            </div>
+
+            <div class="footer-links">
+                <a href=""> Media Center </a>
+                <a href=""> Investor Relations </a>
+                <a href=""> Jobs </a>
+            </div>
+
+            <div class="footer-links">
+                <a href=""> Ways to Watch </a>
+                <a href=""> Terms of Use </a>
+                <a href=""> Privacy </a>
+            </div>
+
+            <div class="footer-links">
+                <a href=""> Cookie Preferences </a>
+                <a href=""> Corporate Information </a>
+                <a href=""> Contact Us </a>
+            </div>
+
+            <div class="footer-links">
+                <a href=""> Speed Test </a>
+                <a href=""> Legal Notices </a>
+                <a href=""> Only on Netflix </a>
+            </div>
+
+            <p> Netflix</p>
+
+           
+
+        </footer>
+
+          
+                <script>
+                    function toggleAnswer(answerId) {
+                      var answer = document.getElementById(answerId);
+                      var allAnswers = document.getElementsByClassName("answer");
+                      
+                      // Set display of other block elements to "none"
+                      for (var i = 0; i < allAnswers.length; i++) {
+                        if (allAnswers[i].style.display === "block" && allAnswers[i].id !== answerId) {
+                          allAnswers[i].style.display = "none";
+                        }
+                      }
+                      
+                      // Toggle the display of the clicked answer element
+                      if (answer.style.display === "none") {
+                        answer.style.display = "block";
+
+                      } else {
+                        answer.style.display = "none";
+                      }
+                    }
+                  </script>
+                  
+                  
+          
+          
+      
+</body>
+</html>
